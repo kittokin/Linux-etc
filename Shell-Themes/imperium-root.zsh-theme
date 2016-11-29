@@ -1,3 +1,6 @@
+# Theme modified version of mortalscumbag theme
+# root version uses magenta to differentiate
+
 function my_git_prompt() {
   tester=$(git rev-parse --git-dir 2> /dev/null) || return
   
