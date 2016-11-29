@@ -1,3 +1,6 @@
+# Modified version of the mortalscumbag theme
+# Uses cyan color for user to differentiate between root theme.
+
 function my_git_prompt() {
   tester=$(git rev-parse --git-dir 2> /dev/null) || return
   
