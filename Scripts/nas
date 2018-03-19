@@ -1,0 +1,27 @@
+#!/bin/bash
+
+PS3='Enter 1 for ssh, 2 for sftp, 3 for Super-Push, or 4 to quit: '
+OPTIONS=("ssh" "sftp" "Super-Push" "quit")
+select opt in "${OPTIONS[@]}" 
+do
+    case $opt in
+	 "ssh") ssh $1 
+	 ;;
+
+	 "sftp") sftp -P 46733 $1:~/ 
+	 ;;
+
+	 "Super-Push") echo "Enter directory to push: ";
+	 ls;
+	 echo " "
+	 read dir2push
+	 
+	 tar -czf - $dir2push | ssh $1 tar -xzvf - -C ~/
+	 ;;
+ 
+         "quit")
+	 break
+	 ;;
+	*) echo Invalid option;;
+    esac
+done
