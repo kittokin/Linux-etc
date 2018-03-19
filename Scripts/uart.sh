@@ -1,2 +1,2 @@
 #!/bin/bash
-sudo chmod +x /dev/ttyACM0 && sudo minicom -D /dev/ttyACM0
+sudo chmod 777 /dev/tty$1 && sudo screen /dev/tty$1 $2
