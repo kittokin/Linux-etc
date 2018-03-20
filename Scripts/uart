@@ -1,2 +1,3 @@
 #!/bin/bash
-sudo chmod 777 /dev/tty$1 && sudo screen /dev/tty$1 $2
+sudo chmod 777 /dev/tty$1 && sudo screen /dev/tty$1 $2,cs$3,-parenb,$4
+
